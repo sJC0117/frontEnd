@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HypherText(HyperLink)</title>
+</head>
+<body>
+<!--웹문서 사이의 연결(링크)는 a(anchor)태그-->
+인스타그램 : <a href="https://www.instagram.com/lee_routine_/" target="_blank">lee_routine</a> <!--href는 링크될 문서의 주소(1)도메인-->
+<!--a뒤에는 줄바꿈 안됩니다.br태그로 줄바꿈합니다-->
+<!--target="_blank"는 새탭으로 열기-->
+<br>
+<strong>같은 폴더위치</strong>의 파일로 이동하기:<a href="mytest.html">mytest.html보여주기</a>
+<!--하나의 웹문서 내용이 화면을 벗어날 때는 같은 문서의 특정 위치로 이동할 수 있습니다-->
+<br><a href="#">이동 동작없음</a><br>
+<hr>
+<!--이미지 포함시키기-->
+<img src='image/image.PNG' width="50%"><!--images폴더가 day1폴더 아래에 있을 때입니다-->
+<img src='image/image2.jpg' width="50%"><!--images폴더가 day1폴더 아래에 있을 때입니다-->
+<img src='image/image3.jpg' width="50%"><!--images폴더가 day1폴더 아래에 있을 때입니다-->
+<hr>
+<img src='image/image.PNG' width="40%"><!--images폴더가 day1폴더 아래에 있을 때입니다-->
+<!--윈도우 크기의 40%! 이미지 비율에 따라 높이 결정됩니다-->
+<img src='image/image2.jpg' width="40%"><!--images폴더가 day1폴더 아래에 있을 때입니다-->
+<img src='image/image3.jpg' width="40%"><!--images폴더가 day1폴더 아래에 있을 때입니다-->
+<!--아래 3개의 이미지 너비를 합하면 화면의 90%,3개가 같은 라인으로 배치됩니다
+-->
+<!--
+만약에 이미지 너비를 40%로 하면 2개 80 같은 라인으로 배치,1개는 라인 바꿔 표시!
+그러나 이미지 너비 50%일 때는 합하면 100이 아니라 여백이 있으므로 오버가 되어서
+모두 다른 라인에 표시됩니다
+-->
+<hr>
+<div><img src='image/image.PNG' width="40%"></div>
+<div><img src='image/image2.JPG' width="40%"></div>
+<div><img src='image/image3.jpg' width="40%"></div>
+</body>
+</html>
