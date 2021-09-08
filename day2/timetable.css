@@ -1,0 +1,30 @@
+td {   /* 선택자 : td 태그 , 모든 td태그에 적용합니다. */
+    border : 1px dotted gray;
+    text-align: center;
+}
+table {
+    width: 70%;
+     /*  태그요소의 외부 여백(위,아래,왼,오)  */
+     margin-right: 5px;
+    margin-left: 30px;
+    /* border-spacing:10px;*/ /*테이블 칸 사이의 간격 설정*/
+    border-collapse:collapse;/*간격 없애기*/
+}
+th {
+    color: white;
+    background-color:teal;
+}
+td,th{
+    /* 태그요소의 내부 여백 (위,아래,왼,오) */
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+caption {  /* 글꼴 크기는 16px 기본 . 비율 : %, em */
+    font-size: 1.2em;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.aa{
+    background-color: lightgray;
+}
+
