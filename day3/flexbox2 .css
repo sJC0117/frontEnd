@@ -33,3 +33,18 @@ a {
     }
 
 }
+html,body {
+    height: 100%;
+}
+.map_wrap {
+    display: flex;
+	flex-direction: column;
+	height: 100%;	
+}
+.footer {
+    border-top: 3px solid tomato;
+    font-size: 0.8 em;
+}
+.footer a,p {
+    color:brown;
+}
