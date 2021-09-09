@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyTest#1</title>
+    <!--스크립트 태그 작성할 수 있는 위치1-->
+</head>
+<body>
+    <h2>My First Javascript</h2>
+    <!--스크립트 태그 작성할 수 있는 위치1
+    스크립트는 html이벤트 리스너 속성에 작성-->
+    <!--자바스크립트에서 사용하는 문서 객체 : document
+    자바스크립트에서 사용하는 브라우저 객체 : window로 현재 실행중인 브라우저
+    -->
+    <!--onclick 이벤트 속성값""안에 자바스크립트 명령을 작성-->
+    <button onclick="document.getElementById('demo').innerHTML=Date()">
+    현재 날짜와 시간을 알려줄게요</button>
+    <!--Date() 함수입니다.-->
+    <p id="demo">innerHTML위치입니다</p>
+</body>
+</html>
