@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 폼</title>
+    <link rel="stylesheet" href="member.css">
+    <script>
+      function validCheck(){
+        const frm=document.frmReg;
+        const frm = document.frmReg
+        //1.패스워드는 8글자 이상이어야 한다.
+        if(frm.password.value.length<8){
+          alert("패스워드는 8글자 이상으로 하세요.")
+          frm.password.focus();//포커스(커서)이동
+          return false;//함수종료
+        }
+        //2.나이:태그 min,max 무시 > 20~~
+        if(frm.age.value<20||frm.age.value>70){//이 위치는 위의 조건이 거짓일때만 동작
+          alert("나이는 20세 이상 70세 이하로만 가능합니다");
+          frm.age.focus();
+          return false;
+        }
+        for(let i=0;i<frm.hobby.length;i++){
+          if(frmReg.hobby[i].checked){//checked 속성은 선택되어 있을때
+            return true;
+          }
+
+        }
+        alert("취미를 1개라도 선택해주세요");
+        return false;
+        //체크한것이 한개도 없으면 여기와서 실행합니다
+        // if(true){
+        // console.log(frm.hobby.length);
+        // return false;
+        // }
+      }
+      function validCheck2(){
+        const frm=document.frmReg;
+        const frm = document.frmReg
+        //1.패스워드는 8글자 이상이어야 한다.
+        if(frm.password.value.length<8){
+          alert("패스워드는 8글자 이상으로 하세요.")
+          frm.password.focus();//포커스(커서)이동
+          return;//함수종료
+        }
+
+        //2.나이:태그 min,max 무시 > 20~~
+        if(frm.age.value<20||frm.age.value>70){//이 위치는 위의 조건이 거짓일때만 동작
+          alert("나이는 20세 이상 70세 이하로만 가능합니다");
+          frm.age.focus();
+          return;
+        }
+        let flag=false;
+        for(let i=0;i<frm)
+
+
+
+        for(let i=0;i<frm.hobby.length;i++){
+          if(frmReg.hobby[i].checked){//checked 속성은 선택되어 있을때
+            return;
+          }
+
+        }
+        alert("취미를 1개라도 선택해주세요");
+        return false;
+        //체크한것이 한개도 없으면 여기와서 실행합니다
+        // if(true){
+        // console.log(frm.hobby.length);
+        // return false;
+        // }
+      }
+    </script>
+</head>
+<body>
+    <div style="width:70%;margin:auto">
+     <h4>JOIN ME</h4>
+     <!--새로운 데이터를 저장하는 동작과 관련될 때는 url창에 데이터를 표시 안합니다.
+     특정 검색어로 조회동작을 하는 경우에는 url창에 파라미터 값을 표시하는것이 일반적-->
+     <form action="success.html" name="frmReg" onsubmit="return validCheck()">
+     <table style="width:100%;margin:auto;">
+      <tr>
+       <td class="aa">이름</td><!--required필수입력 readonly 읽기만-->
+       <td><input type="text" name="name" placeholder="이름필수" required></td>
+      </tr>
+      <tr>
+        <td class="aa">패스워드</td>
+        <td><input type="password" name="password"></td>
+       </tr>
+       <tr>
+        <td  class="aa">이메일</td>
+        <td><input type="email" name="email"></td>
+       </tr>
+       <tr>
+        <td class="aa">나이</td>
+        <td><input type="text" name="age" min="20" max="99"></td>
+       </tr><!--value는 기본값! type="number"일때는 min,max속성 설정 가능-->
+       <tr>
+        <td class="aa">주소</td>
+        <td>
+        <!--선택리스트를 만들기 위해 select태그-->
+       <select name="address">
+       <!--option태그안에 문자열은 화면에 보이는 것
+      value안에 문자열은 서버로 전송되는 값-->
+       <option value="서울">서울</option>
+       <option value="수원">수원</option>
+       <option value="인천" selected>인천</option><!--selected는 기본선택값-->
+       <option value="부산">부산</option>
+       <option value="천안">천안</option>
+    </select>
+       </td>
+       </tr>
+       <tr>
+        <td  class="aa">성별</td>
+        <td class="ff">
+        <input type="radio" value="male" name="gender" checked>남자
+        <!--label과 연결시킬 input은 속성이 필요합니다. 웹 접근성 구현
+        label을 선택해서 해당 form요소가 focus를 갖도록 합니다-->
+        <input type="radio" value="female" name="gender" id="female" checked>여자
+        </td>
+       </tr>
+       <tr>
+        <td class="aa">취미</td>
+        <!--여러개를 복수로 선택할 수 있는 체크박스를 사용합니다.
+        name을 같게 합니다. 서버로 전송될떄는 배열로 처리됩니다-->
+        <td>
+        <input type="checkbox" name="hobby" value="축구">축구
+        <input type="checkbox" name="hobby" value="농구" checked>농구
+        <input type="checkbox" name="hobby" value="스키">스키
+        <input type="checkbox" name="hobby" value="달리기">달리기
+        </td>
+       </tr>
+       <td colspan="2">
+        <input type="submit" value="가입하기">
+        <!--submit:서버에 데이터를 제출(form action속성값에 설정된)
+        action이 html은 데이터 전송확인은 못합니다.url이동만 확인-->
+        <input type="reset" value="다시쓰기">
+        <button onclick="validCheck2()">가입하기[2]</button></td>
+       </tr>
+     </table>
+    </form>
+    </div>
+</body>
+</html>
