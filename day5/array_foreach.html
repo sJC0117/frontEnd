@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        이터러블 Iterable 객체 : 여러개의 데이터를 저장하는 자료구조
+        FOR문을 이용해서 데이터를 순서대로 값을 접근(순회)
+        FOREACH()메소드는 FOR문을 대신합니다
+
+        * if,for,while문을 지양하는 프로그래밍 언어
+    -->
+    <p id="demo"></p>
+    <p id="demo_each"></p>
+    <p id="filter"></p>
+    <script>
+        const list=['sana','mina','nana','nayeon'];
+        for(let i=0;i<list.length;i++){
+            console.log(list[i]);
+        }
+        let result='<ul>';
+        list.forEach(function(value,index,array){
+            // result +="<li>"+index+"</li>";
+            result+=`<li>${index+1}:${value}</li>`;
+            // result +="<li>"+array+"</li>";
+
+        })//콜백함수 인자는 자동으로 받게 됩니다.
+        // value,index,array
+
+        result += '</ul>';
+        document.getElementById('demo_each').innerHTML=result;
+        //결론 : 배열 객체는 유용한 메소드가 많습니다. 상당수 콜백함수를 인자로 사용합니다.
+        // const numbers = [45, 4, 9, 16, 25];
+        // const over18 = numbers.filter(myFunction);
+
+        // document.getElementById("filter").innerHTML = over18;
+
+        // function myFunction(value) {//value,index,array 매개변수만 선언
+        // return value > 18;
+
+        // }
+        //문제 over10배열을 filter메소드로 생성해서 출력.
+        //단,콜백함수를 arrow함수로!
+      
+         const numbers = [45, 4, 9, 16, 25];
+         const over10 = numbers.filter(myFunction);
+
+         document.getElementById("filter").innerHTML = over10;
+
+         function myFunction(value) {//value,index,array 매개변수만 선언
+         return value > 10;
+
+        }
+        result=numbers
+        
+    </script>
+</body>
+</html>
